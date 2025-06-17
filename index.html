@@ -1,1059 +1,335 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinkFlash Matte Lipstik - Spesial Bundle Beli 1 Gratis 1</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Zeliastore.id - Best Seller Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hero-slide {
+            transition: all 0.5s ease;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
+        .product-card:hover .product-image {
+            transform: scale(1.05);
         }
-
-        /* Animated Background */
-        .hero {
-            background: linear-gradient(135deg, #ff6b9d, #ff8fab, #ffa8c5);
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Floating Elements */
-        .floating-hearts {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .heart {
-            position: absolute;
-            color: rgba(255, 255, 255, 0.3);
-            animation: floatUp 15s infinite linear;
-        }
-
-        @keyframes floatUp {
-            0% { 
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { 
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Header Styles */
-        .header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
-
-        .stats {
-            display: flex;
-            gap: 2rem;
-            color: white;
-            font-size: 0.9rem;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            backdrop-filter: blur(10px);
-        }
-
-        /* Hero Content */
-        .hero-content {
-            text-align: center;
-            color: white;
-            z-index: 10;
-            max-width: 800px;
-            padding: 2rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Product Image */
-        .product-showcase {
-            position: relative;
-            margin: 2rem 0;
-        }
-
-        .main-product-img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            animation: productFloat 3s ease-in-out infinite;
+        .product-image {
             transition: transform 0.3s ease;
         }
-
-        .main-product-img:hover {
-            transform: scale(1.05) rotateY(5deg);
-        }
-
-        @keyframes productFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* Price Banner */
-        .price-banner {
-            background: linear-gradient(45deg, #ff4757, #ff6b9d);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            display: inline-block;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
+        .sale-badge {
             animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-
-        .original-price {
-            text-decoration: line-through;
-            opacity: 0.7;
-            font-size: 1.2rem;
-        }
-
-        .sale-price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 0 1rem;
-        }
-
-        /* Countdown Timer */
-        .countdown-container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            margin: 2rem 0;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .countdown-item {
-            background: white;
-            color: #ff4757;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 70px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .countdown-number {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
-        }
-
-        .countdown-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-        }
-
-        /* CTA Button */
-        .cta-button {
-            background: linear-gradient(45deg, #ff4757, #ff6b9d);
-            color: white;
-            padding: 1.5rem 3rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
+        .arrow-btn {
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
-            animation: glow 2s ease-in-out infinite alternate;
         }
-
-        @keyframes glow {
-            from {
-                box-shadow: 0 10px 30px rgba(255, 71, 87, 0.4);
-            }
-            to {
-                box-shadow: 0 10px 30px rgba(255, 71, 87, 0.8), 0 0 30px rgba(255, 71, 87, 0.6);
-            }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 71, 87, 0.6);
-        }
-
-        /* Sections */
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        /* Features Section */
-        .features {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #ff6b9d;
-            margin-bottom: 1rem;
-        }
-
-        /* Product Gallery */
-        .gallery {
-            background: white;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: linear-gradient(135deg, #ff6b9d, #ff8fab);
-            color: white;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stars {
-            color: #ffd700;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-        }
-
-        /* How to Use */
-        .how-to-use {
-            background: #f8f9fa;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .step {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .step:hover {
-            transform: translateY(-5px);
-        }
-
-        .step-number {
-            background: linear-gradient(45deg, #ff4757, #ff6b9d);
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        /* Footer CTA */
-        .footer-cta {
-            background: linear-gradient(135deg, #ff4757, #ff6b9d);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
-        }
-
-        .urgency-text {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.7; }
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .main-product-img {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .countdown {
-                gap: 0.5rem;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-                padding: 0.8rem;
-            }
-            
-            .countdown-number {
-                font-size: 1.5rem;
-            }
-            
-            .cta-button {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-            }
-            
-            .stats {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .header {
-                padding: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .main-product-img {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .section {
-                padding: 2rem 1rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        .arrow-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
-<body>
-    <!-- Floating Hearts -->
-    <div class="floating-hearts">
-        <div class="heart" style="left: 10%; animation-delay: 0s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 20%; animation-delay: 2s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 30%; animation-delay: 4s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 40%; animation-delay: 6s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 50%; animation-delay: 8s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 60%; animation-delay: 10s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 70%; animation-delay: 12s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 80%; animation-delay: 14s;"><i class="fas fa-heart"></i></div>
-        <div class="heart" style="left: 90%; animation-delay: 16s;"><i class="fas fa-heart"></i></div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="header">
-            <div class="stats">
-                <div class="stat-item">
-                    <i class="fas fa-eye"></i>
-                    <span id="viewers">2,847</span> sedang melihat
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-box"></i>
-                    <span id="stock">89</span> tersisa
-                </div>
-            </div>
-        </div>
+<body class="bg-gray-50 font-sans">
+    <!-- Hero Banner Section -->
+    <section class="relative overflow-hidden">
+        <!-- Banner Background -->
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900 to-indigo-800 opacity-90"></div>
         
-        <div class="hero-content">
-            <h1 class="hero-title">PinkFlash Matte Lipstik</h1>
-            <p class="hero-subtitle">Spesial Bundle Beli 1 Gratis 1</p>
-            
-            <div class="product-showcase">
-                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkc-ma87eah0uxjo0d.webp" alt="PinkFlash Matte Lipstik" class="main-product-img">
-            </div>
-            
-            <div class="price-banner">
-                <span class="original-price">Rp 253.249</span>
-                <span class="sale-price">Rp 169.999</span>
-                <div style="font-size: 1rem; margin-top: 0.5rem;">Beli 1 Gratis 1!</div>
-            </div>
-            
-            <div class="countdown-container">
-                <div style="font-size: 1.2rem; font-weight: bold;">Promo Berakhir Dalam:</div>
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">23</span>
-                        <span class="countdown-label">Jam</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">45</span>
-                        <span class="countdown-label">Menit</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">30</span>
-                        <span class="countdown-label">Detik</span>
+        <!-- Banner Content -->
+        <div class="container mx-auto px-4 py-16 md:py-24 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Text Content -->
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 text-center md:text-left">
+                    <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+                        Best Seller Collection
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8">
+                        Temukan tas terpopuler kami yang dicintai oleh ribuan pelanggan di seluruh indonesia. Kualitas premium dengan desain penuh gaya
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#products" class="bg-white text-purple-900 hover:bg-purple-100 font-semibold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                            Shop Now
+                        </a>
+                        <a href="#products" class="border-2 border-white text-white hover:bg-white hover:text-purple-900 font-semibold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                            View Collection
+                        </a>
                     </div>
                 </div>
+                
+                <!-- Product Carousel -->
+                <div class="md:w-1/2 relative">
+                    <div class="relative h-64 md:h-80 lg:h-96 overflow-hidden rounded-xl shadow-2xl bg-white">
+                        <!-- Slides -->
+                        <div id="slide1" class="hero-slide absolute inset-0 flex items-center justify-center p-4 opacity-100">
+                            <img src="https://static.compgoo.com/b69e6f/9954f67832b8c998cff21fe5b2d853c4.gif" 
+                                 alt="EVB Multifunctional Backpack" 
+                                 class="product-image h-full object-contain">
+                        </div>
+                        <div id="slide2" class="hero-slide absolute inset-0 flex items-center justify-center p-4 opacity-0">
+                            <img src="https://cdn.wshopon.com/image/f479c0d5132d2df64ebdbbfa8f59d6ba644ddcb5-500.png" 
+                                 alt="Large Capacity Casual Bag" 
+                                 class="product-image h-full object-contain">
+                        </div>
+                        <div id="slide3" class="hero-slide absolute inset-0 flex items-center justify-center p-4 opacity-0">
+                            <img src="https://cdn.shopify.com/s/files/1/0743/2998/1207/files/spp_20231212150818_6b4f086a494fb80f5e4e27b20671322d.gif" 
+                                 alt="Premium Diamond Crossbody Bag" 
+                                 class="product-image h-full object-contain">
+                        </div>
+                        <div id="slide4" class="hero-slide absolute inset-0 flex items-center justify-center p-4 opacity-0">
+                            <img src="https://img.drz.lazcdn.com/static/bd/p/2f727d0e42d426bc70f949647238c285.png_720x720q80.png_.webp" 
+                                 alt="Fashion Anti-Theft Handbag" 
+                                 class="product-image h-full object-contain">
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button id="prevBtn" class="arrow-btn absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="nextBtn" class="arrow-btn absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-30 text-white p-2 rounded-full">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        
+                        <!-- Indicators -->
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                            <button class="indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 focus:outline-none" data-slide="0"></button>
+                            <button class="indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 focus:outline-none" data-slide="1"></button>
+                            <button class="indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 focus:outline-none" data-slide="2"></button>
+                            <button class="indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 focus:outline-none" data-slide="3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Seller Products Section -->
+    <section id="products" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Best Sellers</h2>
+            <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://static.compgoo.com/b69e6f/9954f67832b8c998cff21fe5b2d853c4.gif" 
+                         alt="EVB Multifunctional Backpack" 
+                         class="product-image w-full h-full object-contain p-4">
+                    <div class="absolute top-4 right-4 sale-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        BEST SELLER
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-800">EVB Multifunctional Backpack</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm ml-2">(1,245 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-purple-900 text-lg">Rp 185.000</span>
+                        <span class="text-sm text-gray-500 line-through">Rp 399.999</span>
+                    </div>
+                    <a href="https://zeliastore.github.io/EVB-multifunctional-backpack/" 
+                       class="mt-4 block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded-lg transition duration-300">
+                        View Details
+                    </a>
+                </div>
             </div>
             
-            <a href="https://nava.orderonline.id/checkout-pinkflash-matte-lipstik" class="cta-button">
-                <i class="fas fa-shopping-cart"></i> AMBIL PROMO SEKARANG JUGA
-            </a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="section features">
-        <h2 class="section-title">Mengapa Memilih PinkFlash?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-kiss-wink-heart"></i></div>
-                <h3>Formula Matte Premium</h3>
-                <p>Tekstur lembut dan tahan lama hingga 12 jam tanpa crack atau flaking. Memberikan hasil akhir matte yang sempurna.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-palette"></i></div>
-                <h3>Pilihan Warna Trending</h3>
-                <p>Tersedia dalam berbagai shade cantik yang cocok untuk semua tone kulit Indonesia. Dari nude hingga bold colors.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-heart"></i></div>
-                <h3>Aman & Halal</h3>
-                <p>Diformulasikan khusus untuk kulit sensitif, telah teruji dermatologi dan bersertifikat halal MUI.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon"><i class="fas fa-star"></i></div>
-                <h3>Waterproof</h3>
-                <p>Tahan air dan keringat, cocok untuk iklim tropis Indonesia. Tidak mudah luntur meski terkena air.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Gallery -->
-    <section class="section gallery">
-        <h2 class="section-title">Gallery Produk</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasc-m36ani697wj358.webp" alt="PinkFlash Shade 1" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/sg-11134201-22110-wfe3cyokvvjvb7.webp" alt="PinkFlash Shade 2" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98z-lym3fr37v8wuba.webp" alt="PinkFlash Shade 3" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/sg-11134201-22100-htbfh58l3iiv29.webp" alt="PinkFlash Shade 4" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/sg-11134201-23010-osnevbr7qulv32.webp" alt="PinkFlash Collection" class="gallery-img">
-            </div>
-            <div class="gallery-item">
-                <img src="https://down-id.img.susercontent.com/file/550364ee911c286244478ca99da595e3.webp" alt="PinkFlash Swatches" class="gallery-img">
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Use -->
-    <section class="section how-to-use">
-        <h2 class="section-title">Cara Penggunaan</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Persiapan Bibir</h3>
-                <p>Bersihkan bibir dari sisa lipstik lama dan oleskan lip balm tipis untuk hasil yang halus.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>Aplikasi Pertama</h3>
-                <p>Oleskan PinkFlash Matte Lipstik secara merata dari tengah bibir ke arah luar dengan gerakan lembut.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Blending</h3>
-                <p>Ratakan dengan jari atau kuas untuk hasil yang natural dan merata di seluruh permukaan bibir.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Finishing</h3>
-                <p>Tunggu 2-3 menit untuk setting sempurna. Hasil matte yang tahan lama siap memukau!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section testimonials">
-        <h2 class="section-title">Apa Kata Mereka?</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://cdn.wshopon.com/image/f479c0d5132d2df64ebdbbfa8f59d6ba644ddcb5-500.png" 
+                         alt="Large Capacity Casual Bag" 
+                         class="product-image w-full h-full object-contain p-4">
+                    <div class="absolute top-4 right-4 sale-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        BEST SELLER
+                    </div>
                 </div>
-                <p class="testimonial-text">"Warna cantik banget dan tahan lama! Udah pake dari pagi sampe sore masih oke. Recomended banget buat yang suka lipstik matte!"</p>
-                <div class="testimonial-author">- Sari, Jakarta</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Teksturnya lembut dan gak bikin bibir kering. Warna nude-nya cocok banget buat daily makeup. Puas banget sama produk ini!"</p>
-                <div class="testimonial-author">- Maya, Bandung</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Packaging-nya cute dan kualitas oke banget. Waterproof juga jadi cocok buat cuaca Indonesia yang panas. Love it!"</p>
-                <div class="testimonial-author">- Dinda, Surabaya</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Promo beli 1 gratis 1 ini beneran worth it! Kualitas premium dengan harga terjangkau. Definitely will repurchase!"</p>
-                <div class="testimonial-author">- Rina, Yogyakarta</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="footer-cta">
-        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Jangan Sampai Terlewat!</h2>
-        <p class="urgency-text">⚡ PROMO TERBATAS! Hanya tersisa <span id="final-stock">89</span> unit lagi!</p>
-        <p style="font-size: 1.1rem; margin-bottom: 2rem;">Dapatkan 2 lipstik premium dengan harga 1 unit. Kesempatan emas yang tidak boleh dilewatkan!</p>
-        
-        <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; margin: 2rem auto; max-width: 500px;">
-            <div style="font-size: 1.3rem; margin-bottom: 1rem;">Promo Berakhir Dalam:</div>
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-number" id="final-hours">23</span>
-                    <span class="countdown-label">Jam</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="final-minutes">45</span>
-                    <span class="countdown-label">Menit</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-number" id="final-seconds">30</span>
-                    <span class="countdown-label">Detik</span>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-800">Large Capacity Casual Bag</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm ml-2">(892 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-purple-900 text-lg">Rp 185.000</span>
+                        <span class="text-sm text-gray-500 line-through">Rp 292.500</span>
+                    </div>
+                    <a href="https://zeliastore.github.io/LARGE-CAPACITY-CASUAL-BAG/" 
+                       class="mt-4 block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded-lg transition duration-300">
+                        View Details
+                    </a>
                 </div>
             </div>
-        </div>
-        
-        <a href="https://nava.orderonline.id/checkout-pinkflash-matte-lipstik" class="cta-button" style="font-size: 1.5rem; padding: 2rem 3rem;">
-            <i class="fas fa-shopping-cart"></i> AMBIL PROMO SEKARANG JUGA
-        </a>
-        
-        <div style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.9;">
-            ✅ Gratis Ongkir Seluruh Indonesia<br>
-            ✅ Garansi Uang Kembali 100%<br>
-            ✅ Produk Original & Bergaransi
+            
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://cdn.shopify.com/s/files/1/0743/2998/1207/files/spp_20231212150818_6b4f086a494fb80f5e4e27b20671322d.gif" 
+                         alt="Premium Diamond Crossbody Bag" 
+                         class="product-image w-full h-full object-contain p-4">
+                    <div class="absolute top-4 right-4 sale-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        BEST SELLER
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-800">Premium Diamond Crossbody Bag</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm ml-2">(1,543 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-purple-900 text-lg">Rp 179.000</span>
+                        <span class="text-sm text-gray-500 line-through">Rp 249.000</span>
+                    </div>
+                    <a href="https://zeliastore.github.io/Premium-Diamond-Crossbody-Bag/" 
+                       class="mt-4 block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded-lg transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <img src="https://img.drz.lazcdn.com/static/bd/p/2f727d0e42d426bc70f949647238c285.png_720x720q80.png_.webp" 
+                         alt="Fashion Anti-Theft Handbag" 
+                         class="product-image w-full h-full object-contain p-4">
+                    <div class="absolute top-4 right-4 sale-badge bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                        BEST SELLER
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-800">Fashion Anti-Theft Handbag</h3>
+                    <div class="flex items-center mb-2">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 text-sm ml-2">(1,076 reviews)</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-purple-900 text-lg">Rp 175.000</span>
+                        <span class="text-sm text-gray-500 line-through">Rp 249.000</span>
+                    </div>
+                    <a href="https://zeliastore.github.io/Fashion-anti-theft-handbag/" 
+                       class="mt-4 block w-full bg-purple-600 hover:bg-purple-700 text-white text-center py-2 rounded-lg transition duration-300">
+                        View Details
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <script>
-        // Dynamic counters
-        let viewerCount = 2847;
-        let stockCount = 89;
-        
-        function updateCounters() {
-            // Simulate viewers fluctuation
-            const viewerChange = Math.floor(Math.random() * 20) - 10;
-            viewerCount = Math.max(2800, Math.min(3000, viewerCount + viewerChange));
-            document.getElementById('viewers').textContent = viewerCount.toLocaleString();
-            
-            // Simulate stock decrease
-            if (Math.random() < 0.1) { // 10% chance every update
-                stockCount = Math.max(50, stockCount - 1);
-                document.getElementById('stock').textContent = stockCount;
-                document.getElementById('final-stock').textContent = stockCount;
-            }
-        }
-        
-        // Countdown timer
-        let timeLeft = {
-            hours: 23,
-            minutes: 45,
-            seconds: 30
-        };
-        
-        function updateCountdown() {
-            timeLeft.seconds--;
-            
-            if (timeLeft.seconds < 0) {
-                timeLeft.seconds = 59;
-                timeLeft.minutes--;
-                
-                if (timeLeft.minutes < 0) {
-                    timeLeft.minutes = 59;
-                    timeLeft.hours--;
-                    
-                    if (timeLeft.hours < 0) {
-                        timeLeft.hours = 23;
-                        timeLeft.minutes = 59;
-                        timeLeft.seconds = 59;
-                    }
-                }
-            }
-            
-            // Update all countdown displays
-            document.getElementById('hours').textContent = timeLeft.hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = timeLeft.minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = timeLeft.seconds.toString().padStart(2, '0');
-            
-            document.getElementById('final-hours').textContent = timeLeft.hours.toString().padStart(2, '0');
-            document.getElementById('final-minutes').textContent = timeLeft.minutes.toString().padStart(2, '0');
-            document.getElementById('final-seconds').textContent = timeLeft.seconds.toString().padStart(2, '0');
-        }
-        
-        // Start intervals
-        setInterval(updateCounters, 3000); // Update every 3 seconds
-        setInterval(updateCountdown, 1000); // Update every second
-        
-        // Smooth scroll for better UX
         document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
+            // Carousel functionality
+            const slides = document.querySelectorAll('.hero-slide');
+            const indicators = document.querySelectorAll('.indicator');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Initialize carousel
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.style.opacity = i === index ? '1' : '0';
+                });
+                
+                indicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.add('bg-opacity-100');
+                        indicator.classList.remove('bg-opacity-50');
+                    } else {
+                        indicator.classList.add('bg-opacity-50');
+                        indicator.classList.remove('bg-opacity-100');
                     }
                 });
-            });
-        });
-        
-        // Add click tracking for CTA buttons
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                // Track click event
-                console.log('CTA clicked');
-                // You can add analytics tracking here
-            });
-        });
-        
-        // Lazy loading for images
-        const images = document.querySelectorAll('img');
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        images.forEach(img => imageObserver.observe(img));
-        
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.hero');
-            const speed = scrolled * 0.5;
-            parallax.style.transform = `translateY(${speed}px)`;
-        });
-        
-        // Add entrance animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Apply animation to sections
-        document.querySelectorAll('.section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(50px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-        
-        // Mobile menu toggle (if needed)
-        const mobileMenuToggle = function() {
-            // Add mobile menu functionality if needed
-        };
-        
-        // Add social proof notifications
-        const socialProofMessages = [
-            "Seseorang dari Jakarta baru saja membeli PinkFlash Matte Lipstik",
-            "2 unit tersisa di Bandung!",
-            "Maya dari Surabaya memberikan rating 5 bintang",
-            "Promo berakhir dalam beberapa jam!",
-            "Stok terbatas, segera checkout!"
-        ];
-        
-        let messageIndex = 0;
-        
-        function showSocialProof() {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                background: linear-gradient(45deg, #ff4757, #ff6b9d);
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                z-index: 1000;
-                animation: slideInLeft 0.5s ease, slideOutLeft 0.5s ease 4s;
-                max-width: 300px;
-                font-size: 0.9rem;
-            `;
-            
-            notification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-bell" style="color: #ffd700;"></i>
-                    <span>${socialProofMessages[messageIndex]}</span>
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Remove notification after 5 seconds
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.parentNode.removeChild(notification);
-                }
-            }, 5000);
-            
-            messageIndex = (messageIndex + 1) % socialProofMessages.length;
-        }
-        
-        // Show social proof every 10 seconds
-        setInterval(showSocialProof, 10000);
-        
-        // Add CSS animations for social proof
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideInLeft {
-                from {
-                    transform: translateX(-100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes slideOutLeft {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(-100%);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Add urgency indicators
-        function addUrgencyFlash() {
-            const urgencyElements = document.querySelectorAll('.urgency-text');
-            urgencyElements.forEach(element => {
-                element.style.animation = 'none';
-                setTimeout(() => {
-                    element.style.animation = 'blink 1s infinite';
-                }, 10);
-            });
-        }
-        
-        // Flash urgency text every 30 seconds
-        setInterval(addUrgencyFlash, 30000);
-        
-        // Add exit intent popup (simplified)
-        let exitIntentShown = false;
-        
-        document.addEventListener('mouseleave', function(e) {
-            if (e.clientY <= 0 && !exitIntentShown) {
-                exitIntentShown = true;
                 
-                const popup = document.createElement('div');
-                popup.style.cssText = `
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0,0,0,0.8);
-                    z-index: 10000;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                `;
-                
-                popup.innerHTML = `
-                    <div style="
-                        background: white;
-                        padding: 3rem;
-                        border-radius: 20px;
-                        text-align: center;
-                        max-width: 500px;
-                        margin: 2rem;
-                        position: relative;
-                    ">
-                        <button onclick="this.parentElement.parentElement.remove()" style="
-                            position: absolute;
-                            top: 15px;
-                            right: 20px;
-                            background: none;
-                            border: none;
-                            font-size: 2rem;
-                            cursor: pointer;
-                            color: #999;
-                        ">&times;</button>
-                        <h2 style="color: #ff4757; margin-bottom: 1rem;">Tunggu Dulu!</h2>
-                        <p style="margin-bottom: 2rem; color: #333;">Jangan lewatkan promo spesial BELI 1 GRATIS 1 ini! Hanya berlaku hari ini.</p>
-                        <a href="https://nava.orderonline.id/checkout-pinkflash-matte-lipstik" 
-                           style="
-                               background: linear-gradient(45deg, #ff4757, #ff6b9d);
-                               color: white;
-                               padding: 1rem 2rem;
-                               border-radius: 25px;
-                               text-decoration: none;
-                               display: inline-block;
-                               font-weight: bold;
-                           ">
-                           AMBIL SEKARANG
-                        </a>
-                    </div>
-                `;
-                
-                document.body.appendChild(popup);
+                currentSlide = index;
             }
+            
+            // Next slide
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Previous slide
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Start auto slide
+            function startSlideShow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // Stop auto slide
+            function stopSlideShow() {
+                clearInterval(slideInterval);
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopSlideShow();
+                startSlideShow();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopSlideShow();
+                startSlideShow();
+            });
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    stopSlideShow();
+                    startSlideShow();
+                });
+            });
+            
+            // Initialize
+            showSlide(0);
+            startSlideShow();
+            
+            // Pause on hover
+            const carousel = document.querySelector('.relative.h-64');
+            carousel.addEventListener('mouseenter', stopSlideShow);
+            carousel.addEventListener('mouseleave', startSlideShow);
         });
-        
-        // Performance optimization
-        const debounce = (func, wait) => {
-            let timeout;
-            return function executedFunction(...args) {
-                const later = () => {
-                    clearTimeout(timeout);
-                    func(...args);
-                };
-                clearTimeout(timeout);
-                timeout = setTimeout(later, wait);
-            };
-        };
-        
-        // Debounced scroll handler
-        const debouncedScrollHandler = debounce(() => {
-            const scrolled = window.pageYOffset;
-            const rate = scrolled * -0.5;
-            const parallax = document.querySelector('.hero');
-            if (parallax) {
-                parallax.style.transform = `translate3d(0, ${rate}px, 0)`;
-            }
-        }, 10);
-        
-        window.addEventListener('scroll', debouncedScrollHandler);
     </script>
 </body>
 </html>
